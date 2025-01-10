@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5</title>
+</head>
+<body>
+
+  <h1>Product Order Form</h1>
+  <form action="/submit-order" method="post" id="order-form">
+    <div class="form-container">
+      <label for="customer-name">Customer Name:</label>
+      <input type="text" id="customer-name" name="customer-name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" rows="4" required></textarea>
+
+      <label for="product">Product:</label>
+      <select id="product" name="product" required onchange="calculateTotal()">
+        <option value="" disabled selected>Select a Product</option>
+        <option value="product1" data-price="100">Product 1 - $100</option>
+        <option value="product2" data-price="150">Product 2 - $150</option>
+        <option value="product3" data-price="200">Product 3 - $200</option>
+      </select>
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" min="1" value="1" required onchange="calculateTotal()">
+
+      <label>Delivery Preferences:</label>
+      <input type="radio" id="standard" name="delivery" value="standard" checked>
+      <label for="standard">Standard</label>
+      <input type="radio" id="express" name="delivery" value="express">
+      <label for="express">Express</label>
+
+      <label for="coupon">Apply Coupon:</label>
+      <input type="text" id="coupon" name="coupon" placeholder="Enter Coupon Code">
+      <button type="button" onclick="applyCoupon()">Apply Coupon</button>
+
+      <div class="total-price" id="total-price">
+        Total Price: $0
+      </div>
+
+      <div class="button-container">
+        <button type="submit">Submit Order</button>
+      </div>
+    </div>
+  </form>
+
+  <script>
+    function calculateTotal() {
+      const productSelect = document.getElementById('product');
+      const quantityInput = document.getElementById('quantity');
+      const totalPriceDiv = document.getElementById('total-price');
+      
+      const selectedProduct = productSelect.options[productSelect.selectedIndex];
+      const productPrice = parseFloat(selectedProduct.getAttribute('data-price'));
+      const quantity = parseInt(quantityInput.value);
+      
+      if (productPrice && quantity > 0) {
+        const totalPrice = productPrice * quantity;
+        totalPriceDiv.textContent = `Total Price: $${totalPrice}`;
+      } else {
+        totalPriceDiv.textContent = `Total Price: $0`;
+      }
+    }
+
+    function applyCoupon() {
+      const couponCode = document.getElementById('coupon').value;
+      let discount = 0;
+      
+      if (couponCode === "DISCOUNT10") {
+        discount = 0.10; // 10% discount
+      } else if (couponCode === "DISCOUNT20") {
+        discount = 0.20; // 20% discount
+      }
+      
+      const totalPriceDiv = document.getElementById('total-price');
+      const productSelect = document.getElementById('product');
+      const quantityInput = document.getElementById('quantity');
+      
+      const selectedProduct = productSelect.options[productSelect.selectedIndex];
+      const productPrice = parseFloat(selectedProduct.getAttribute('data-price'));
+      const quantity = parseInt(quantityInput.value);
+      
+      if (productPrice && quantity > 0) {
+        let totalPrice = productPrice * quantity;
+        if (discount > 0) {
+          totalPrice = totalPrice - (totalPrice * discount);
+        }
+        totalPriceDiv.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+      }
+    }
+  </script>
+
+</body>
+</html>

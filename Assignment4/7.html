@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7</title>
+</head>
+<body>
+  <h1>Travel Booking Form</h1>
+  <form action="/submit-booking" method="post">
+
+    <div class="form-container">
+
+      <label for="full-name">Full Name:</label>
+      <input type="text" id="full-name" name="full-name" required>
+
+      <label for="contact-info">Contact Information (Email or Phone):</label>
+      <input type="text" id="contact-info" name="contact-info" required>
+
+      <label for="destination">Destination:</label>
+      <select id="destination" name="destination" required>
+        <option value="" disabled selected>Select your destination</option>
+        <option value="paris">Paris</option>
+        <option value="london">London</option>
+        <option value="newyork">New York</option>
+        <option value="tokyo">Tokyo</option>
+        <option value="sydney">Sydney</option>
+      </select>
+
+      <label for="travel-dates">Travel Dates:</label>
+      <input type="date" id="travel-dates" name="travel-dates" required>
+
+      <label for="num-travelers">Number of Travelers:</label>
+      <input type="number" id="num-travelers" name="num-travelers" min="1" value="1" required>
+
+      <label>Travel Class:</label>
+      <input type="radio" id="economy" name="travel-class" value="Economy" required>
+      <label for="economy">Economy</label>
+      <input type="radio" id="business" name="travel-class" value="Business">
+      <label for="business">Business</label>
+      <input type="radio" id="first-class" name="travel-class" value="First Class">
+      <label for="first-class">First Class</label>
+
+      <label>
+        <input type="checkbox" id="insurance" name="insurance" value="Yes">
+      </label>
+
+      <button type="submit">Book Travel</button>
+
+    </div>
+  </form>
+
+</body>
+</html>

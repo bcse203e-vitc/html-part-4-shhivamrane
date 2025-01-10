@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1</title>
+</head>
+<body>
+  <h1>User Login</h1>
+  <form action="/login" method="post">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" required><br><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+    <button type="submit">Login</button><br><br>
+    <a href="#reset-password">Forgot Password?</a>
+  </form>
+  <hr>
+
+  <h2 id="reset-password">Reset Password</h2>
+  <form action="/reset-password" method="post">
+    <label for="reset-email">Email:</label><br>
+    <input type="email" id="reset-email" name="reset-email" placeholder="example@domain.com" required><br><br>
+    <label for="new-password">New Password:</label><br>
+    <input type="password" id="new-password" name="new-password" oninput="checkPasswordStrength()" required><br><br>
+    <div class="strength-meter">
+      <span id="strength-meter-bar"></span>
+    </div><br>
+    <label for="confirm-password">Confirm Password:</label><br>
+    <input type="password" id="confirm-password" name="confirm-password" required><br><br>
+    <button type="submit">Reset Password</button>
+  </form>
+
+  <script>
+    function checkPasswordStrength() {
+      const password = document.getElementById('new-password').value;
+      const strengthMeter = document.getElementById('strength-meter-bar');
+      const weak = /[a-z]/.test(password);
+      const medium = /[A-Z]/.test(password) && /\d/.test(password);
+      const strong = /[A-Z]/.test(password) && /\d/.test(password) && /[!@#$%^&*()_+]/.test(password);
+
+      if (strong) {
+        strengthMeter.className = 'strong';
+        strengthMeter.style.width = '100%';
+      } else if (medium) {
+        strengthMeter.className = 'medium';
+        strengthMeter.style.width = '60%';
+      } else if (weak) {
+        strengthMeter.className = 'weak';
+        strengthMeter.style.width = '30%';
+      } else {
+        strengthMeter.className = '';
+        strengthMeter.style.width = '0';
+      }
+    }
+  </script>
+</body>
+</html>

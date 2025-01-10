@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8</title>
+</head>
+<body>
+
+  <h1>Online Quiz</h1>
+
+  <div class="timer">
+    <p>Time Remaining: <span id="timer-placeholder">00:10:00</span></p>
+  </div>
+
+  <form action="/submit-quiz" method="post">
+
+    <div class="form-container">
+
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+
+      <div class="question-container">
+        <label>Question 1: What is the capital of France?</label><br>
+        <input type="radio" id="paris" name="q1" value="Paris" required>
+        <label for="paris">Paris</label><br>
+        <input type="radio" id="london" name="q1" value="London">
+        <label for="london">London</label><br>
+        <input type="radio" id="berlin" name="q1" value="Berlin">
+        <label for="berlin">Berlin</label><br>
+        <input type="radio" id="madrid" name="q1" value="Madrid">
+        <label for="madrid">Madrid</label>
+      </div>
+
+      <div class="question-container">
+        <label>Question 2: Select your favorite programming languages:</label><br>
+        <input type="checkbox" id="html" name="q2" value="HTML">
+        <label for="html">HTML</label><br>
+        <input type="checkbox" id="css" name="q2" value="CSS">
+        <label for="css">CSS</label><br>
+        <input type="checkbox" id="javascript" name="q2" value="JavaScript">
+        <label for="javascript">JavaScript</label><br>
+        <input type="checkbox" id="python" name="q2" value="Python">
+        <label for="python">Python</label><br>
+      </div>
+
+      <div class="question-container">
+        <label>Question 3: What is the largest planet in our solar system?</label><br>
+        <input type="radio" id="jupiter" name="q3" value="Jupiter" required>
+        <label for="jupiter">Jupiter</label><br>
+        <input type="radio" id="saturn" name="q3" value="Saturn">
+        <label for="saturn">Saturn</label><br>
+        <input type="radio" id="earth" name="q3" value="Earth">
+        <label for="earth">Earth</label><br>
+        <input type="radio" id="mars" name="q3" value="Mars">
+        <label for="mars">Mars</label><br>
+      </div>
+
+      <button type="submit">Submit Quiz</button>
+
+    </div>
+  </form>
+
+</body>
+</html>

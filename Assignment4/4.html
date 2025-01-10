@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4</title>
+</head>
+<body>
+  <h1>Job Application Form</h1>
+  <form id="application-form" action="/submit-application" method="post" enctype="multipart/form-data">
+
+    <div class="form-container">
+      <div id="page-1">
+        <h2>Page 1: Personal Details</h2>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" required></textarea>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <div class="button-container">
+          <button type="button" onclick="document.getElementById('page-1').hidden=true; document.getElementById('page-2').hidden=false;">Next</button>
+        </div>
+      </div>
+
+      <div id="page-2" hidden>
+        <h2>Page 2: Educational Background</h2>
+        <label for="degree">Degree:</label>
+        <input type="text" id="degree" name="degree" required>
+
+        <label for="year">Year of Passing:</label>
+        <input type="text" id="year" name="year" required>
+
+        <label for="institution">Institution Name:</label>
+        <input type="text" id="institution" name="institution" required>
+
+        <div class="button-container">
+          <button type="button" onclick="document.getElementById('page-2').hidden=true; document.getElementById('page-1').hidden=false;">Previous</button>
+          <button type="button" onclick="document.getElementById('page-2').hidden=true; document.getElementById('page-3').hidden=false;">Next</button>
+        </div>
+      </div>
+
+      <div id="page-3" hidden>
+        <h2>Page 3: Work Experience</h2>
+        <label for="company">Company Name:</label>
+        <input type="text" id="company" name="company" required>
+
+        <label for="designation">Designation:</label>
+        <input type="text" id="designation" name="designation" required>
+
+        <label for="duration">Duration:</label>
+        <input type="text" id="duration" name="duration" required>
+
+        <label for="resume">Upload Resume:</label>
+        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx,.txt" required>
+
+        <div class="button-container">
+          <button type="button" onclick="document.getElementById('page-3').hidden=true; document.getElementById('page-2').hidden=false;">Previous</button>
+          <button type="submit">Submit</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</body>
+</html>
