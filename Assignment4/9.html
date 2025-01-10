@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9</title>
+</head>
+<body>
+
+  <h1>Hotel Room Booking</h1>
+
+  <form action="/submit-booking" method="post">
+    <div class="form-container">
+
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="contact-info">Contact Info (Email or Phone):</label>
+      <input type="text" id="contact-info" name="contact-info" required>
+
+      <label for="checkin-date">Check-in Date:</label>
+      <input type="date" id="checkin-date" name="checkin-date" required>
+
+       <label for="checkout-date">Check-out Date:</label>
+      <input type="date" id="checkout-date" name="checkout-date" required>
+
+      <label for="num-guests">Number of Guests:</label>
+      <input type="number" id="num-guests" name="num-guests" min="1" value="1" required>
+
+      <label for="room-type">Room Type:</label>
+      <select id="room-type" name="room-type" required>
+        <option value="single">Single</option>
+        <option value="double">Double</option>
+        <option value="suite">Suite</option>
+      </select>
+
+      <label>Additional Services:</label>
+      <input type="checkbox" id="breakfast" name="services" value="Breakfast">
+      <label for="breakfast">Breakfast</label><br>
+      <input type="checkbox" id="airport-pickup" name="services" value="Airport Pickup">
+      <label for="airport-pickup">Airport Pickup</label><br>
+
+      <div class="total-cost">
+        <p>Total Cost (for reference): $0 (To be calculated manually based on your selections)</p>
+      </div>
+
+      <button type="submit">Book Room</button>
+
+    </div>
+  </form>
+
+</body>
+</html>

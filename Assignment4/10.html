@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10</title>
+</head>
+<body>
+
+  <h1>Create Your Custom Form</h1>
+
+  <form action="" method="post" class="form-container">
+    <label for="form-name">Form Name:</label>
+    <input type="text" id="form-name" name="form-name" placeholder="Enter the form name">
+
+    <label for="num-fields">Number of Input Fields:</label>
+    <input type="number" id="num-fields" name="num-fields" min="1" max="10" value="1">
+
+    <label for="field-type">Field Type:</label>
+    <select id="field-type" name="field-type">
+      <option value="text">Text</option>
+      <option value="email">Email</option>
+      <option value="number">Number</option>
+      <option value="date">Date</option>
+    </select>
+
+    <label for="field-label">Field Label:</label>
+    <input type="text" id="field-label" name="field-label" placeholder="Enter label for the field">
+
+    <button type="submit">Create Form</button>
+  </form>
+
+  <div class="preview-container">
+    <h3>Form Preview (Static):</h3>
+    <form action="" method="post">
+      <label for="preview-name">Form Name:</label>
+      <input type="text" id="preview-name" name="preview-name" placeholder="Form name will appear here">
+
+      <label for="preview-field">Field:</label>
+      <input type="text" id="preview-field" name="preview-field" placeholder="Field will appear here">
+
+      <button type="submit">Submit Custom Form</button>
+    </form>
+  </div>
+
+</body>
+</html>

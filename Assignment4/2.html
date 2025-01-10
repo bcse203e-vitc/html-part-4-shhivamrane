@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2</title>
+</head>
+<body>
+  <h1>Event Registration Form</h1>
+  <form action="/register" method="post">
+    <label for="full-name">Full Name:</label>
+    <input type="text" id="full-name" name="full-name" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="example@domain.com" required><br>
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required><br>
+ 
+    <label>Gender:</label>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+    <input type="radio" id="other" name="gender" value="other">
+    <label for="other">Other</label><br>
+
+    <label for="age-group">Age Group:</label>
+    <select id="age-group" name="age-group" required>
+      <option value="">Select an age group</option>
+      <option value="under-18">Under 18</option>
+      <option value="18-30">18-30</option>
+      <option value="31-50">31-50</option>
+      <option value="51+">51+</option>
+    </select><br>
+
+    <label>Topics of Interest:</label>
+    <input type="checkbox" id="topic1" name="topics" value="Technology">
+    <label for="topic1">Differential Equations and Transforms</label>
+    <input type="checkbox" id="topic2" name="topics" value="Business">
+    <label for="topic2">Complex Variables</label>
+    <input type="checkbox" id="topic3" name="topics" value="Health">
+    <label for="topic3">Health</label>
+    <input type="checkbox" id="topic4" name="topics" value="Education">
+    <label for="topic4">Education</label><br>
+
+    <label for="comments">Additional Comments:</label>
+    <textarea id="comments" name="comments" rows="4"></textarea><br>
+
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>
